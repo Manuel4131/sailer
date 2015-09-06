@@ -84,6 +84,7 @@ WSGI_APPLICATION = 'sailer.wsgi.application'
 #}
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -102,3 +103,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+from django.core.exceptions import ImproperlyConfigured
+def get_env_var(key):
+    try:
+        return os.evnrion[key]
+    except KeyError:
+        raise ImproperlyConfigured{
+            'Environment var {key} is required'.format(key=key)
+    }
