@@ -104,11 +104,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-from django.core.exceptions import ImproperlyConfigured
-def get_env_var(key):
-    try:
-        return os.evnrion[key]
-    except KeyError:
-        raise ImproperlyConfigured{
-            'Environment var {key} is required'.format(key=key)
-    }
+# from django.core.exceptions import ImproperlyConfigured
+# def get_env_var(key):
+#     try:
+#         return os.evnrion[key]
+#     except KeyError:
+#         raise ImproperlyConfigured{
+#             'Environment var {key} is required'.format(key=key)
+#     }
